@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Weekend Challenge 5</title>
+    <link rel="stylesheet" href="/vendors/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Hairline" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/main.css">
+    <script src="/vendors/angular.min.js" charset="utf-8"></script>
+    <script src="/scripts/app.js" charset="utf-8"></script>
+  </head>
+  <body ng-app="omdbApp">
+    <main class="container" ng-controller="SearchController as search">
+      <div class="row">
+        <h1>Weekend 5 Chi OMDB Find and Favorite Thingy App</h1>
+      </div>
+      <div class="row">
+        <form>
+          <label for="keyword">Search for movies</label>
+          <input id="keyword" type="text" placeholder="toy story" ng-model="search.keyword">
+          <button type="button" name="button" class="btn btn-default" ng-click="search.findMovie(search.keyword)">Search</button>
+        </form>
+      </div>
+      <div class="row">
+        <h2 class="col-sm-12 col-md-12 col-lg-12">Results</h2>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 col-md-4 col-lg-4 result" ng-repeat="movie in search.movies">
+          <strong>{{ movie.Title }}, {{ movie.Year }}</strong>
+          <button class="btn btn-block" type="button" name="button" ng-click="search.addToFavorites(movie)">Favorite</button>
+          <img ng-if="movie.Poster != 'N/A'" ng-src="{{ movie.Poster }}" alt="poster for {{ movie.Title }}">
+        </div>
+      </div>
+    </main>
+    <div class="container" ng-controller="FavoritesController as favorites">
+      <div class="row">
+        <h2 class="col-sm-12 col-md-12 col-lg-12">Favorites</h2>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 col-md-4 col-lg-4 result" ng-repeat="movie in favorites.movies">
+          <strong>{{ movie.Title }}, {{ movie.Year }}</strong>
+          <!-- <button class="btn btn-block" type="button" name="button" ng-click="search.addToFavorites(movie)">Favorite</button> -->
+          <img ng-if="movie.Poster != 'N/A'" ng-src="{{ movie.Poster }}" alt="poster for {{ movie.Title }}">
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

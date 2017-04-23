@@ -1,0 +1,28 @@
+h1, h2, h3 {
+  font-family: 'Bungee Hairline', cursive;
+}
+
+.no-movie {
+  background-color: lightgray;
+}
+
+.result button {
+  margin-bottom: 4px;
+}
+
+@media (min-width: 992px) {
+  .result {
+    height: 300px;
+    overflow: hidden;
+  }
+
+  .result:hover {
+    overflow: visible;
+    z-index: 1;
+    position: relative;
+  }
+
+  .movie-header {
+    margin-top: 10px;
+  }
+}

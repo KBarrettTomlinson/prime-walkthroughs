@@ -1,0 +1,29 @@
+{
+  "name": "chi-5-live-solve-starter",
+  "version": "1.0.0",
+  "description": "Live solve for Weekend Challenge 5",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PrimeAcademy/chi-5-live-solve-starter.git"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "angular",
+    "mongo"
+  ],
+  "author": "antoinette@primeacademy.io",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PrimeAcademy/chi-5-live-solve-starter/issues"
+  },
+  "homepage": "https://github.com/PrimeAcademy/chi-5-live-solve-starter#readme",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}

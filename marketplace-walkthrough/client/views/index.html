@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <title>The Marketplace</title>
+
+    <link rel="stylesheet" href="vendors/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+
+    <!-- DATA -->
+    <script type="text/javascript" src="scripts/data/settings.js"></script>
+    <script type="text/javascript" src="scripts/data/items.js"></script>
+
+    <!-- CLASSES -->
+    <script type="text/javascript" src="scripts/classes/Utilities.js"></script>
+    <script type="text/javascript" src="scripts/classes/MarketItem.js"></script>
+    <script type="text/javascript" src="scripts/classes/Player.js"></script>
+    <script type="text/javascript" src="scripts/classes/Game.js"></script>
+
+    <!-- ANGULAR -->
+    <script type="text/javascript" src="vendors/angular/angular.min.js"></script>
+    <script type="text/javascript" src="scripts/client.js"></script>
+    <script type="text/javascript" src="scripts/factories/GameService.js"></script>
+    <script type="text/javascript" src="scripts/controllers/GameController.js"></script>
+  </head>
+  <body>
+    <div ng-controller="GameController">
+      <div class="container-fluid">
+        <div class="jumbotron lead">
+          <h2><bold>The Market Place</bold></h2>
+          <p>
+            To achieve this you will need to purchase items and sell them when the price becomes higher. To help, you can see the average price you paid for each item next to its green sell button. To purchase an item, simply click on the blue item button. Good luck!
+          </p>
+        </div>
+      </div>
+      <div class="container text-center lead">
+        <p ng-hide="gameInstance.enabled">GAME OVER</p>
+        <h2>Player Cash: {{ gameInstance.player.cash | currency }}</h2>
+      </div>
+      <div class="container">
+        <div ng-include="'views/templates/items.html'"></div>
+      </div>
+    </div>
+  </body>
+</html>
